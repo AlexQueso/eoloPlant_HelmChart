@@ -1,0 +1,9 @@
+1. Get the application URL by running these commands:
+{{- if .Values.ingress.enabled }}
+  visit http://192.168.49.2/ to get to the eolo plant application
+  use http://192.168.49.2/toposervice/{city} to use the toposervice API
+{{- else }}
+  minikube service serverservice 
+  minikube service toposervice
+  to use the oposervice API use the url given by minikube and add /api/topographicdetails/{city} after the port number
+{{- end }}
